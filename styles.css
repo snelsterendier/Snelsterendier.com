@@ -1,0 +1,31 @@
+body {
+    background-color: #f0f0f0; /* Light background for contrast */
+    color: #004d00; /* Dark green text */
+    font-family: Arial, sans-serif;
+}
+
+h1, h2, h3 {
+    color: #004d00; /* Dark green for headings */
+}
+
+a {
+    color: #66cc66; /* Light green for links */
+    text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+    color: #004d00; /* Dark green on hover */
+}
+
+.button {
+    background-color: #66cc66; /* Light green button */
+    color: white; /* White text on button */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #004d00; /* Dark green on button hover */
+}
