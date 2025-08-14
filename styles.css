@@ -1,24 +1,24 @@
 body {
-    background-color: #020403; /* Light background for contrast */
-    color: #004d00; /* Dark green text */
+    background-color: #020403; /* Dark background for contrast */
+    color: #d6c3e0; /* Light purple text */
     font-family: Arial, sans-serif;
 }
 
 h1, h2, h3 {
-    color: #004d00; /* Dark green for headings */
+    color: #4b2c6f; /* Dark purple for headings */
 }
 
 a {
-    color: #66cc66; /* Light green for links */
+    color: #d6c3e0; /* Light purple for links */
     text-decoration: none; /* Remove underline */
 }
 
 a:hover {
-    color: #004d00; /* Dark green on hover */
+    color: #4b2c6f; /* Dark purple on hover */
 }
 
 .button {
-    background-color: #66cc66; /* Light green button */
+    background-color: #d6c3e0; /* Light purple button */
     color: white; /* White text on button */
     border: none;
     padding: 10px 20px;
@@ -27,5 +27,5 @@ a:hover {
 }
 
 .button:hover {
-    background-color: #004d00; /* Dark green on button hover */
+    background-color: #4b2c6f; /* Dark purple on button hover */
 }
