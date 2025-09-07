@@ -1,33 +1,69 @@
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
-    background-color: #020403; /* Dark background for contrast */
-    color: #d6c3e0; /* Light purple text */
-    font-family: 'Aptos', sans-serif; /* Use Aptos font */
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #f5f5f5;
+  background-color: #1a1a1a;
 }
-
-h1, h2, h3, p {
-    text-align: center; /* Center text for headings and paragraphs */
-    font-family: 'Aptos', sans-serif; /* Use Aptos font for headings */
-    font-weight: 900; /* Ensure it's bold */
-}
-
 a {
-    color: #d6c3e0; /* Light purple for links */
-    text-decoration: none; /* Remove underline */
+  color: #ff6f61;
+  text-decoration: none;
 }
-
-a:hover {
-    color: #4b2c6f; /* Dark purple on hover */
+a:hover, a:focus {
+  text-decoration: underline;
 }
-
-.button {
-    background-color: #d6c3e0; /* Light purple button */
-    color: white; /* White text on button */
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+header {
+  background: #111;
+  padding: 1rem 0;
 }
-
-.button:hover {
-    background-color: #4b2c6f; /* Dark purple on button hover */
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  gap: 1rem;
+}
+.nav-list a.active {
+  font-weight: bold;
+  color: #ffb347;
+}
+.hero {
+  text-align: center;
+  padding: 2rem;
+}
+.hero img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  border-radius: 10px;
+}
+.age-warning {
+  color: #ff4c4c;
+  font-weight: bold;
+}
+.daily-stats {
+  padding: 2rem;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+.stat-card {
+  background: #222;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+}
+footer {
+  background: #111;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
 }
