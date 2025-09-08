@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Snelsterendier - SnelCoins Casino</title>
 
   <!-- Open Graph -->
@@ -21,70 +21,87 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <header>
+    <nav aria-label="Main Navigation">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="srhoe-quotes.html">SRHOE Quotes</a></li>
+        <li><a href="gambling.html" class="active">SnelCoins</a></li>
+        <li><a href="wall-of-shame.html">Wall of Shame</a></li>
+        <li><a href="hall-of-fame.html">Hall of Fame</a></li>
+        <li><a href="how-to-prepare.html">How to Prepare</a></li>
+        <li><a href="who-am-i.html">Who Am I?</a></li>
+        <li><a href="random-things.html">Random Things</a></li>
+        <li><a href="language.html">My Language</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<header>
-  <nav aria-label="Main Navigation">
-    <ul class="nav-list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="srhoe-quotes.html">SRHOE Quotes</a></li>
-      <li><a href="gambling.html" class="active">SnelCoins</a></li>
-      <li><a href="wall-of-shame.html">Wall of Shame</a></li>
-      <li><a href="hall-of-fame.html">Hall of Fame</a></li>
-      <li><a href="how-to-prepare.html">How to Prepare</a></li>
-      <li><a href="who-am-i.html">Who Am I?</a></li>
-      <li><a href="random-things.html">Random Things</a></li>
-      <li><a href="language.html">My Language</a></li>
-    </ul>
-  </nav>
-</header>
+  <main>
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">Welcome to the Totally Fake SnelCoins Casino 🎰</h1>
+      <p class="age-warning">⚠️ All play. No real money. REPLACETHISABC.</p>
+      <p id="balance" aria-live="polite"><strong>Balance:</strong> —</p>
+    </section>
 
-<main>
-  <section class="hero">
-    <h1>SnelCoins Casino 🎰</h1>
-    <p class="age-warning">Welcome to the only casino where everything is fake and the house always wins (but also loses sometimes, maybe).</p>
-  </section>
+    <!-- Controls: reset / beg -->
+    <section class="tokens" aria-labelledby="tokens-title">
+      <h2 id="tokens-title">Tokens & Controls</h2>
+      <div class="controls-row">
+        <button id="reset-btn" class="btn" aria-label="Reset balance to 666">Reset Balance (666 🪙)</button>
+        <button id="beg-btn" class="btn" aria-label="Beg for more SnelCoins">Beg for More</button>
+      </div>
+      <p class="note">Resetting goes back to 666 SnelCoins. Begging gives a random gift — still fake.</p>
+    </section>
 
-  <section class="tokens">
-    <h2>Your SnelCoins Balance</h2>
-    <p id="balance"><strong>Balance:</strong> 🪙</p>
-    <button class="btn" onclick="resetBalance()">Reset Balance (Back to 666 🪙)</button>
-  </section>
+    <!-- Slot Machine -->
+    <section class="game" aria-labelledby="slots-title">
+      <h2 id="slots-title">🎰 Slot Machine</h2>
+      <div id="slots-display" class="game-output" aria-live="polite">🍕 | 🐸 | 👹</div>
+      <div class="controls-row">
+        <button id="spin-btn" class="btn" aria-label="Spin the slot machine">Spin (Cost: 50 🪙)</button>
+      </div>
+    </section>
 
-  <section class="game">
-    <h2>🎰 Slot Machine</h2>
-    <div id="slots-display" class="game-output">🍕 | 🐸 | 👹</div>
-    <button class="btn" onclick="playSlots()">Spin (Cost: 50 🪙)</button>
-  </section>
+    <!-- Coin Flip -->
+    <section class="game" aria-labelledby="coin-title">
+      <h2 id="coin-title">🪙 Coin Flip</h2>
+      <div class="controls-row">
+        <button id="heads-btn" class="btn" aria-label="Bet heads">Bet Heads (Cost: 20 🪙)</button>
+        <button id="tails-btn" class="btn" aria-label="Bet tails">Bet Tails (Cost: 20 🪙)</button>
+      </div>
+      <p id="coin-result" class="game-output" aria-live="polite"></p>
+    </section>
 
-  <section class="game">
-    <h2>🪙 Coin Flip</h2>
-    <button class="btn" onclick="flipCoin('heads')">Bet Heads (Cost: 20 🪙)</button>
-    <button class="btn" onclick="flipCoin('tails')">Bet Tails (Cost: 20 🪙)</button>
-    <p id="coin-result" class="game-output"></p>
-  </section>
+    <!-- Dice Roll -->
+    <section class="game" aria-labelledby="dice-title">
+      <h2 id="dice-title">🎲 Dice Roll</h2>
+      <label for="dice-choice">Pick a number (1–6):</label>
+      <input type="number" id="dice-choice" min="1" max="6" value="3" aria-describedby="dice-hint">
+      <div class="controls-row">
+        <button id="roll-btn" class="btn" aria-label="Roll the dice">Roll (Cost: 30 🪙)</button>
+      </div>
+      <p id="dice-result" class="game-output" aria-live="polite"></p>
+    </section>
 
-  <section class="game">
-    <h2>🎲 Dice Roll</h2>
-    <label for="dice-choice">Pick a number (1–6):</label>
-    <input type="number" id="dice-choice" min="1" max="6" value="3">
-    <button class="btn" onclick="rollDice()">Roll (Cost: 30 🪙)</button>
-    <p id="dice-result" class="game-output"></p>
-  </section>
+    <!-- Cry -->
+    <section class="game" aria-labelledby="cry-title">
+      <h2 id="cry-title">😭 Cry in the Corner</h2>
+      <button id="cry-btn" class="btn" aria-label="Cry in the corner">Cry</button>
+    </section>
 
-  <section class="game">
-    <h2>😭 Cry in the Corner</h2>
-    <button class="btn" onclick="cryCorner()">Cry</button>
-  </section>
+    <!-- Small disclaimer -->
+    <section class="warning" aria-live="polite">
+      <p><strong>Disclaimer:</strong> This is satire and fake play. No real currency, no real payouts. REPLACETHISABC.</p>
+    </section>
+  </main>
 
-  <section class="warning">
-    <p><strong>Disclaimer:</strong> This is <em>not</em> real gambling. It’s satire, it’s fake, it’s REPLACETHISABC. If you’re here to actually gamble, you’re in the wrong multiverse.</p>
-  </section>
-</main>
+  <footer>
+    <p>&copy; 2025 Snelsterendier | All games are silly, satirical, and covered in ranch.</p>
+  </footer>
 
-<footer>
-  <p>&copy; 2025 Snelsterendier | All gambling here is fake, chaotic, and covered in ranch.</p>
-</footer>
-
-<script src="script.js"></script>
+  <!-- Script: make sure script.js is in the same directory as this file -->
+  <script src="script.js" defer></script>
 </body>
 </html>
