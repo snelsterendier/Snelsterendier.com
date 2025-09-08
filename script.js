@@ -124,7 +124,7 @@
   }
 
   function resetBalance() {
-    const ok = confirm("Reset your balance to 0 SnelCoins? This cannot be undone.");
+    const ok = confirm("Reset your balance to 1337 SnelCoins? This cannot be undone.");
     if (!ok) return;
     state.balance = DEFAULT_BALANCE;
     saveBalance(state.balance);
