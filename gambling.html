@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Snelsterendier – SnelCoins Casino</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snelsterendier - SnelCoins Casino</title>
 
-<!-- Open Graph -->
-<meta property="og:title" content="SnelCoins Casino – Fake Gambling for Fake Monsters">
-<meta property="og:description" content="Play slots, flip coins, roll dice. All with fake SnelCoins. No money, just chaos and REPLACETHISABC.">
-<meta property="og:image" content="https://snelsterendier.com/RanchMan.jpg">
-<meta property="og:url" content="https://snelsterendier.com/gambling.html">
-<meta property="og:type" content="website">
+  <!-- Open Graph -->
+  <meta property="og:title" content="SnelCoins Casino 🎰 Chaos with Ranch">
+  <meta property="og:description" content="Fake gambling with fake money. Lose everything, cry in the corner, repeat. REPLACETHISABC.">
+  <meta property="og:image" content="https://snelsterendier.com/RanchMan.jpg">
+  <meta property="og:url" content="https://snelsterendier.com/gambling.html">
+  <meta property="og:type" content="website">
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SnelCoins Casino – Fake Gambling for Fake Monsters">
-<meta name="twitter:description" content="Bet your fake SnelCoins. Lose them gloriously. Win nothing of value. REPLACETHISABC approved.">
-<meta name="twitter:image" content="https://snelsterendier.com/RanchMan.jpg">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SnelCoins Casino 🎰 Chaos with Ranch">
+  <meta name="twitter:description" content="The only casino where you can’t cash out, only cry out. REPLACETHISABC.">
+  <meta name="twitter:image" content="https://snelsterendier.com/RanchMan.jpg">
 
-<link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -39,50 +39,50 @@
 </header>
 
 <main>
-  <!-- Casino Intro -->
   <section class="hero">
-    <h1>Welcome to the Totally Fake SnelCoins Casino 🎰</h1>
-    <p class="age-warning">⚠️ Reminder: This is all satire. No real money. No payouts. Only REPLACETHISABC.</p>
-    <img src="assets/images/hero.jpg" alt="Snelsterendier Gambling Hero">
-    <p id="balance"><strong>Balance:</strong> 🪙</p>
+    <h1>SnelCoins Casino 🎰</h1>
+    <p class="age-warning">Welcome to the only casino where everything is fake and the house always wins (but also loses sometimes, maybe).</p>
   </section>
 
-  <!-- Slot Machine -->
+  <section class="tokens">
+    <h2>Your SnelCoins Balance</h2>
+    <p id="balance"><strong>Balance:</strong> 🪙</p>
+    <button class="btn" onclick="resetBalance()">Reset Balance (Back to 666 🪙)</button>
+  </section>
+
   <section class="game">
-    <h2>Slot Machine 🎰</h2>
-    <p>Spin the reels. Hope for chaos.</p>
-    <div id="slots-display">🍕 | 🐸 | 👹</div>
+    <h2>🎰 Slot Machine</h2>
+    <div id="slots-display" class="game-output">🍕 | 🐸 | 👹</div>
     <button class="btn" onclick="playSlots()">Spin (Cost: 50 🪙)</button>
   </section>
 
-  <!-- Coin Flip -->
   <section class="game">
-    <h2>Coin Flip 🪙</h2>
-    <p>Pick heads or tails. Pray to the ranch gods.</p>
+    <h2>🪙 Coin Flip</h2>
     <button class="btn" onclick="flipCoin('heads')">Bet Heads (Cost: 20 🪙)</button>
     <button class="btn" onclick="flipCoin('tails')">Bet Tails (Cost: 20 🪙)</button>
-    <p id="coin-result"></p>
+    <p id="coin-result" class="game-output"></p>
   </section>
 
-  <!-- Dice Roll -->
   <section class="game">
-    <h2>Dice Roll 🎲</h2>
-    <p>Pick a number between 1–6. Win big or lose fast.</p>
+    <h2>🎲 Dice Roll</h2>
+    <label for="dice-choice">Pick a number (1–6):</label>
     <input type="number" id="dice-choice" min="1" max="6" value="3">
     <button class="btn" onclick="rollDice()">Roll (Cost: 30 🪙)</button>
-    <p id="dice-result"></p>
+    <p id="dice-result" class="game-output"></p>
   </section>
 
-  <!-- Cry in the Corner -->
   <section class="game">
-    <h2>Cry in the Corner 😭</h2>
-    <p>Sometimes, all you can do is cry.</p>
+    <h2>😭 Cry in the Corner</h2>
     <button class="btn" onclick="cryCorner()">Cry</button>
+  </section>
+
+  <section class="warning">
+    <p><strong>Disclaimer:</strong> This is <em>not</em> real gambling. It’s satire, it’s fake, it’s REPLACETHISABC. If you’re here to actually gamble, you’re in the wrong multiverse.</p>
   </section>
 </main>
 
 <footer>
-  <p>&copy; 2025 Snelsterendier | All gambling here is fake, satirical, and full of REPLACETHISABC.</p>
+  <p>&copy; 2025 Snelsterendier | All gambling here is fake, chaotic, and covered in ranch.</p>
 </footer>
 
 <script src="script.js"></script>
