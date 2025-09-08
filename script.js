@@ -1,102 +1,54 @@
-// --- SnelCoins Casino ---
-// Persistent balance using localStorage
 let balance = localStorage.getItem("snelcoins");
 if (balance === null) {
-  balance = 666; // starting fake money
+  balance = 666;
   localStorage.setItem("snelcoins", balance);
 } else {
   balance = parseInt(balance);
 }
 
-// Update balance display
 function updateBalance() {
-  document.getElementById("balance").innerHTML = `<strong>Balance:</strong> ${balance} 🪙`;
+  document.getElementById("balance").textContent = `Balance: ${balance} 🪙`;
 }
 updateBalance();
 
-// Save balance
 function saveBalance() {
   localStorage.setItem("snelcoins", balance);
   updateBalance();
 }
 
-// --- Slot Machine ---
 function playSlots() {
-  const cost = 50;
-  if (balance < cost) {
-    alert("💀 You are broke. REPLACETHISABC laughs at your misery.");
-    return;
-  }
-  balance -= cost;
-
-  const symbols = ["🍕", "🐸", "👹", "🦴", "🪙", "🥦"];
-  const slot1 = symbols[Math.floor(Math.random() * symbols.length)];
-  const slot2 = symbols[Math.floor(Math.random() * symbols.length)];
-  const slot3 = symbols[Math.floor(Math.random() * symbols.length)];
-
-  document.getElementById("slots-display").textContent = `${slot1} | ${slot2} | ${slot3}`;
-
-  if (slot1 === slot2 && slot2 === slot3) {
-    balance += 300;
-    alert("🎉 JACKPOT! You won 300 SnelCoins! REPLACETHISABC is furious.");
-  } else if (slot1 === slot2 || slot2 === slot3 || slot1 === slot3) {
-    balance += 100;
-    alert("✨ Two of a kind! You won 100 SnelCoins.");
-  } else {
-    alert("❌ Nothing. REPLACETHISABC eats your hope.");
-  }
+  if (balance < 50) return alert("Not enough SnelCoins!");
+  balance -= 50;
+  const symbols = ["🍕","🐸","👹","🦴","🪙","🥦"];
+  const s1 = symbols[Math.floor(Math.random()*symbols.length)];
+  const s2 = symbols[Math.floor(Math.random()*symbols.length)];
+  const s3 = symbols[Math.floor(Math.random()*symbols.length)];
+  document.getElementById("slots-display").textContent = `${s1} | ${s2} | ${s3}`;
+  if (s1===s2 && s2===s3) balance += 300;
+  else if (s1===s2 || s2===s3 || s1===s3) balance += 100;
   saveBalance();
 }
 
-// --- Coin Flip ---
 function flipCoin(choice) {
-  const cost = 20;
-  if (balance < cost) {
-    alert("💀 You are broke. REPLACETHISABC stole your lunch money.");
-    return;
-  }
-  balance -= cost;
-
+  if (balance < 20) return alert("Not enough SnelCoins!");
+  balance -= 20;
   const outcome = Math.random() < 0.5 ? "heads" : "tails";
   document.getElementById("coin-result").textContent = `It landed on ${outcome}.`;
-
-  if (choice === outcome) {
-    balance += 40;
-    alert("👏 You guessed right! Double your fake money!");
-  } else {
-    alert("😂 Wrong guess. REPLACETHISABC wins again.");
-  }
+  if (choice === outcome) balance += 40;
   saveBalance();
 }
 
-// --- Dice Roll ---
 function rollDice() {
-  const cost = 30;
+  if (balance < 30) return alert("Not enough SnelCoins!");
   const choice = parseInt(document.getElementById("dice-choice").value);
-
-  if (balance < cost) {
-    alert("💀 No coins left. REPLACETHISABC bites your dice.");
-    return;
-  }
-  if (choice < 1 || choice > 6) {
-    alert("😒 Invalid choice. Pick a number 1–6.");
-    return;
-  }
-
-  balance -= cost;
-  const roll = Math.floor(Math.random() * 6) + 1;
-  document.getElementById("dice-result").textContent = `You rolled a ${roll}.`;
-
-  if (roll === choice) {
-    balance += 180;
-    alert(`🎲 Lucky! You rolled exactly ${roll} and won 180 SnelCoins.`);
-  } else {
-    alert("❌ Nope. REPLACETHISABC keeps your coins.");
-  }
+  if (choice < 1 || choice > 6) return alert("Pick 1–6.");
+  balance -= 30;
+  const roll = Math.floor(Math.random()*6) + 1;
+  document.getElementById("dice-result").textContent = `You rolled a ${roll}`;
+  if (roll === choice) balance += 180;
   saveBalance();
 }
 
-// --- Cry in the Corner ---
 function cryCorner() {
-  alert("😭 You cry in the corner. Nothing changes. REPLACETHISABC stares silently.");
+  alert("😭 You cry. Nothing happens.");
 }
