@@ -5,7 +5,7 @@
 
 (() => {
   const STORAGE_KEY = "snelcoins";
-  const DEFAULT_BALANCE = 666;
+  const DEFAULT_BALANCE = 1337;
 
   // Game costs / payouts
   const COSTS = { slots: 50, coin: 20, dice: 30 };
@@ -49,7 +49,7 @@
   function playSlots() {
     const cost = COSTS.slots;
     if (state.balance < cost) {
-      alert("💀 Not enough SnelCoins. REPLACETHISABC mocks you.");
+      alert("💀 Not enough SnelCoins. Snelsterendier mocks you for being such a poor little Snorpinoti.");
       return;
     }
     state.balance -= cost;
@@ -70,7 +70,7 @@
       state.balance += PAYOUTS.slotsTwo;
       alert("✨ Two of a kind! You won 100 SnelCoins.");
     } else {
-      alert("❌ Nothing. REPLACETHISABC swipes your hope.");
+      alert("❌ Nothing. Snelsterendier swipes your hope.");
     }
     saveBalance(state.balance);
     updateUI(state);
@@ -79,7 +79,7 @@
   function flipCoin(choice) {
     const cost = COSTS.coin;
     if (state.balance < cost) {
-      alert("💀 Not enough SnelCoins to bet.");
+      alert("💀 Not enough SnelCoins to bet. How poor can you be?");
       return;
     }
     state.balance -= cost;
@@ -89,7 +89,7 @@
       state.balance += PAYOUTS.coinWin;
       alert("👏 Right guess! You win 40 SnelCoins.");
     } else {
-      alert("😂 Wrong guess. REPLACETHISABC cackles.");
+      alert("😂 Wrong guess. Snelsterendier cackles.");
     }
     saveBalance(state.balance);
     updateUI(state);
@@ -113,23 +113,23 @@
       state.balance += PAYOUTS.diceWin;
       alert(`🎲 Lucky! You rolled ${roll} and won ${PAYOUTS.diceWin} SnelCoins.`);
     } else {
-      alert("❌ Not it. REPLACETHISABC takes the coins.");
+      alert("❌ Not it. Snelsterendier takes the coins. (And your dignity)");
     }
     saveBalance(state.balance);
     updateUI(state);
   }
 
   function cryCorner() {
-    alert("😭 You cry in the corner. Nothing happens. REPLACETHISABC watches silently.");
+    alert("😭 You cry in the corner. Nothing happens. Snelsterendier watches silently, waiting to eat.");
   }
 
   function resetBalance() {
-    const ok = confirm("Reset your balance to 666 SnelCoins? This cannot be undone.");
+    const ok = confirm("Reset your balance to 0 SnelCoins? This cannot be undone.");
     if (!ok) return;
     state.balance = DEFAULT_BALANCE;
     saveBalance(state.balance);
     updateUI(state);
-    alert("✅ Balance reset. Don't blow it all on pizza-ranch combos.");
+    alert("✅ Balance reset. Don't blow it all on feet pics.");
   }
 
   function begForMore() {
@@ -137,7 +137,7 @@
     state.balance += gift;
     saveBalance(state.balance);
     updateUI(state);
-    alert(`🪙 A stray monster handed you ${gift} SnelCoins. Still fake, still delicious.`);
+    alert(`🪙 A cute cockroach handed you ${gift} SnelCoins. He does it gladly.`);
   }
 
   // Attach event listeners after DOM is ready
